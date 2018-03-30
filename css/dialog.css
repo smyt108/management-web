@@ -1,0 +1,24 @@
+#orderinfo_app .box-header h4{
+	font-size: 15px;
+	font-weight: bold;
+}
+#orderinfo_app .row-groups-item{
+	margin-bottom: 10px;
+}
+#orderinfo_app .col-md-1{
+	padding-right:0;
+	padding-left:0;
+}
+#orderinfo_app .col-md-3{
+	padding-right:5px;
+	padding-left:10px;
+}
+#orderinfo_app .row{
+	padding-left: 20px;
+}
+#orderinfo_app .box-header{
+	padding-left: 15px;
+}
+#orderinfo_app label{
+	font-weight: normal;
+}
