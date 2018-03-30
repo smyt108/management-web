@@ -82,8 +82,6 @@ $(function(){
         $.post('orderlist.json','',function(result){
             var rows = result.data.rows;
 
-
-
             var idArr = rows.map(function(item){
                 return item.id;
             })
