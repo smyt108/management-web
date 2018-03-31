@@ -1,6 +1,6 @@
 [{
 	"productId":1,
-	"productCode":"6PK1000高规格测试1",
+	"productCode":"6PK1000",
 	"material":"上等胶料",
 	"wireType":"上等线",
 	"wireSize":10,
@@ -18,7 +18,7 @@
 	"last_update_time":"1970-01-01 00:00:00"
 	},{
 	"productId":2,
-	"productCode":"6PK1000中规格测试1",
+	"productCode":"5PK1000",
 	"material":"中等胶料",
 	"wireType":"中等线",
 	"wireSize":8,
@@ -36,7 +36,7 @@
 	"last_update_time":"1970-01-01 00:00:00"
 	},{
 	"productId":3,
-	"productCode":"6PK1000低规格测试1",
+	"productCode":"6PK1000",
 	"material":"低等胶料",
 	"wireType":"低等线",
 	"wireSize":6,
