@@ -22,3 +22,7 @@
 #orderinfo_app label{
 	font-weight: normal;
 }
+
+#orderinfo_app table td{
+	line-height: 30px;
+}

@@ -27,24 +27,35 @@ $(function(){
     
 
     $("[name='isSpecialD']").click(function () {
-        if($(this).prop('checked')){
-            $("[opertaion]").removeAttr("disabled");
-        }
-        else{
-            $("[opertaion]").attr("disabled","disabled");
-        }
-        $('input[name="isSpecial"]').val($(this).attr('checked'));
+        checkIsSpecial($(this))
     })
 
     $("[name='productCode']").blur(function () {
-        var code = $(this).val().trim();
+        autoFillInfo($(this));
+    })
+
+    function checkIsSpecial($this){
+        var $form = $this.parents("[name='orderItem']");
+        if($this.prop('checked')){
+            $form.find("[opertaion]").removeAttr("disabled");
+        }
+        else{
+            $form.find("[opertaion]").attr("disabled","disabled");
+        }
+        $form.find('input[name="isSpecial"]').val($this.attr('checked'));
+    }
+
+    
+
+    function autoFillInfo($this){
+        var code = $this.val().trim();
         var matchList = productList.filter(function(item) {
             return item.productCode==code;
         });
 
         if(matchList.length<=0){
-            alert("没有该类型产品哦！");
-            $("#productinfo").find('[opertaion]').val("");
+            //alert("没有该类型产品哦！");
+            //$("#productinfo").find('[opertaion]').val("");
             return;
         }
 
@@ -59,19 +70,59 @@ $(function(){
         $("[name='attachSize']").val(product.attachSize);
         $("[name='moldId']").val(product.moldId);*/
 
-        $('input[opertaion]').each(function(index,el){
+        $this.parents("[name='orderItem']").find('input[opertaion]').each(function(index,el){
             $(el).val(product[$(el).attr('name')]);
+        })
+    }
+
+    $("#addcontinue").click(function(){
+        var $form = $('<form class="form-horizontal" name="orderItem"><form>');
+        $form = $form.append($("[name='orderItem']").html());
+        $form.append("<button class='btn btn-info' type='button' delete>删除</button>")
+        $(".order-item").append($form);
+
+        $form.find("[name='isSpecialD']").click(function () {
+            checkIsSpecial($(this))
+        })
+
+        $form.find("[name='productCode']").blur(function () {
+            autoFillInfo($(this));
+        })
+
+        $form.find("[delete]").click(function() {
+            $(this).parent().remove();
         })
     })
 
     // 订单提交
     $('#btnSubmit').click(function(event) {
         var obj = {};
+
+        $("[name='orderbrife']").find("input[name]").each(function(index, el) {
+            var $item = $(el);
+            // console.log(el)
+            obj[$item.attr('name')] = $item.val();
+        });
+
         $('#orderBox input[name]').each(function(index,el){
             var $item = $(el);
             // console.log(el)
             obj[$item.attr('name')] = $item.val();
         })
+
+        var productArr=[]
+        $("[name='orderItem']").each(function(index, form) {
+            var product={}
+            $(form).find("input[name]").each(function(index, el) {
+                var $item = $(el);
+                // console.log(el)
+                product[$item.attr('name')] = $item.val();
+            });
+            productArr.push(product);
+        });
+
+        obj["productInfos"] = productArr;
+        
         var orderListStr = localStorage.getItem('orderList');
         var orderlist = []
         if(orderListStr!=undefined&&orderListStr!=""){

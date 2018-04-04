@@ -101,49 +101,9 @@ var dialogVue = new Vue({
 
 		dialogVue.orderinfo = orderinfo;
 
-   //  	var dialogVue = new Vue({
-   //  	  el: '#orderinfo_app',
-   //  	  data: {
-   //  	  	productName:orderinfo.productName,
-   //  	    id: orderinfo.id,
-			// outerOrderId: orderinfo.outerOrderId,
-			// buyer: orderinfo.buyer,
-			// receiver: orderinfo.receiver,
-			// phoneNo: orderinfo.phoneNo,
-			// chargeType: orderinfo.chargeType,
-			// deliveryTime: orderinfo.deliveryTime,
-			// requiredBrand: orderinfo.requiredBrand,
-			// unit: orderinfo.unit,
-			// orderNum: orderinfo.orderNum,
-			// requiredQuality: orderinfo.requiredQuality,
-			// createTime: orderinfo.createTime,
-			// createUserName: orderinfo.createUserName,
-			// productId: orderinfo.productId,
-			// productCode: orderinfo.productCode,
-			// material: orderinfo.material,
-			// wireType: orderinfo.wireType,
-			// wireSize: orderinfo.wireSize,
-			// tension: orderinfo.tension,
-			// clothType: orderinfo.clothType,
-			// thickness: orderinfo.thickness,
-			// outerPerimeter: orderinfo.outerPerimeter,
-			// attachSize: orderinfo.attachSize,
-			// actualMoldRequired: orderinfo.actualMoldRequired,
-			// isSpecial: orderinfo.isSpecial,
-			// moldId: orderinfo.moldId,
-			// moldCategory: orderinfo.moldCategory,
-			// moldType: orderinfo.moldType,
-			// moldSize: orderinfo.moldSize
-   //  	  }
-   //  	});
-
-
     }
 
     
-
-
-
     function renderTr(index,item){
     	var trHtml = "";
     	trHtml+='<tr>'+
@@ -151,7 +111,7 @@ var dialogVue = new Vue({
 	    '<td>'+item.id+'</td>'+
 	    '<td>'+item.outerOrderId+'</td>'+
 	    '<td>'+item.buyer+'</td>'+
-	    '<td>'+item.productCode+'</td>'+
+	    '<td>'+item.productName+'</td>'+
 	    '<td>'+item.deliveryTime+'</td>'+
 	    '<td><a href="javascript:void(0)" class="order-view" data-orderid="'+item.id+'">查看</a></td>'+
 	'</tr>';

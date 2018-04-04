@@ -68,7 +68,7 @@
         <h4>订单信息</h4>
         </div>
       <div class="box-body">
-        <form class="form-horizontal">
+        <form class="form-horizontal" name="orderbrife">
           <div class="form-group">
             <label class="col-md-1 control-label">产品名称</label>
             <div class="col-md-2">
@@ -131,78 +131,83 @@
           <h4>产品信息</h4>
         </div>
         <div class="box-body">
-          <form class="form-horizontal">
-            <div class="form-group">
-              <div class="col-sm-5">
-                <div class="checkbox">
-                  <label>
-                  <input type="hidden" name="isSpecial" value="false">
-                  <input type="checkbox" name="isSpecialD">是否特殊产品
-                  </label>
+          <div class="product-info">
+          <div class="order-item">
+            <form class="form-horizontal" name="orderItem">
+              <div class="form-group">
+                <div class="col-sm-5">
+                  <div class="checkbox">
+                    <label>
+                    <input type="hidden" name="isSpecial" value="false">
+                    <input type="checkbox" name="isSpecialD">是否特殊产品
+                    </label>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label class="col-md-1 control-label">产品代码</label>
-              <div class="col-md-2">
-                <input class="form-control" type="text" name="productCode"/>
-              </div>
+              <div class="form-group">
+                <label class="col-md-1 control-label">产品代码</label>
+                <div class="col-md-2">
+                  <input class="form-control" type="text" name="productCode"/>
+                </div>
 
-              <label class="col-md-1 control-label">胶料种类</label>
-              <div class="col-md-2">
-                <input class="form-control" type="text" disabled name="material" opertaion/>
-              </div>
-              <label class="col-md-1 control-label">线种类</label>
-              <div class="col-md-2">
-                <input class="form-control" type="text" disabled name="wireType" opertaion/>
-              </div>
-              <label class="col-md-1 control-label">线数(根)</label>
-              <div class="col-md-2">
-                <input class="form-control" type="number" disabled name="wireSize" opertaion/>
-              </div>
+                <label class="col-md-1 control-label">胶料种类</label>
+                <div class="col-md-2">
+                  <input class="form-control" type="text" disabled name="material" opertaion/>
+                </div>
+                <label class="col-md-1 control-label">线种类</label>
+                <div class="col-md-2">
+                  <input class="form-control" type="text" disabled name="wireType" opertaion/>
+                </div>
+                <label class="col-md-1 control-label">线数(根)</label>
+                <div class="col-md-2">
+                  <input class="form-control" type="number" disabled name="wireSize" opertaion/>
+                </div>
 
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-1 control-label">张力</label>
-              <div class="col-md-2">
-                <input class="form-control" type="text" disabled name="tension" opertaion/>
               </div>
 
-              <label class="col-md-1 control-label">布种类</label>
-              <div class="col-md-2">
-                <input class="form-control" type="text" disabled name="clothType" opertaion/>
+              <div class="form-group">
+                <label class="col-md-1 control-label">张力</label>
+                <div class="col-md-2">
+                  <input class="form-control" type="text" disabled name="tension" opertaion/>
+                </div>
+
+                <label class="col-md-1 control-label">布种类</label>
+                <div class="col-md-2">
+                  <input class="form-control" type="text" disabled name="clothType" opertaion/>
+                </div>
+
+                <label class="col-md-1 control-label">厚度</label>
+                <div class="col-md-2">
+                  <input class="form-control" type="text" disabled name="thickness" opertaion/>
+                </div>
+
+                <label class="col-md-1 control-label">外周长</label>
+                <div class="col-md-2">
+                  <input class="form-control" type="text" disabled name="outerPerimeter" opertaion/>
+                </div>
               </div>
 
-              <label class="col-md-1 control-label">厚度</label>
-              <div class="col-md-2">
-                <input class="form-control" type="text" disabled name="thickness" opertaion/>
-              </div>
+              <div class="form-group">
+                <label class="col-md-1 control-label">附加尺寸</label>
+                <div class="col-md-2">
+                  <input class="form-control" type="text" disabled name="attachSize" opertaion/>
+                </div>
 
-              <label class="col-md-1 control-label">外周长</label>
-              <div class="col-md-2">
-                <input class="form-control" type="text" disabled name="outerPerimeter" opertaion/>
-              </div>
-            </div>
+                <label class="col-md-1 control-label">模具id</label>
+                <div class="col-md-2">
+                  <input class="form-control" type="text" disabled name="moldId" opertaion/>
+                </div>
+                <label class="col-md-1  control-label">实际模具要求</label>
+                <div class="col-md-2">
+                  <input class="form-control" type="text"  name="actualMoldRequired" />
+                </div>
 
-            <div class="form-group">
-              <label class="col-md-1 control-label">附加尺寸</label>
-              <div class="col-md-2">
-                <input class="form-control" type="text" disabled name="attachSize" opertaion/>
               </div>
-
-              <label class="col-md-1 control-label">模具id</label>
-              <div class="col-md-2">
-                <input class="form-control" type="text" disabled name="moldId" opertaion/>
-              </div>
-              <label class="col-md-1  control-label">实际模具要求</label>
-              <div class="col-md-2">
-                <input class="form-control" type="text"  name="actualMoldRequired" />
-              </div>
-
-            </div>
-          </form>
+            </form>
+          </div>
+          </div>
+          <button class="btn btn-info pull-right" type="button" id="addcontinue">继续添加</button>
         </div>
       </div>
 
