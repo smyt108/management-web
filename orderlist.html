@@ -83,158 +83,115 @@
                             <th style="width: 14%">订单ID</th>
                             <th style="width: 14%">外部订单ID</th>
                             <th style="width: 22%">订货单位</th>
-                            <th style="width: 16%">产品代码</th>
+                            <th style="width: 16%">产品名称</th>
                             <th style="width: 18%">交货时间</th>
                             <th style="width: auto">操作</th>
                         </tr>
-
-                        </tbody></table>
+                        </tbody>
+                    </table>
                 </div>
-
             </div>
 
-        <div class="modal fade" tabindex="-1" role="dialog" id="Ctl_OrderInfo">
-  <div class="modal-dialog  modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="ordertitle">查看订单</h4>
-      </div>
-      <div class="modal-body" id="orderinfo_app">
-          <div class="row">
-            <div class="box-header">
-                <h4>订单信息</h4>
-            </div>
-        <div class="col-md-12 row-groups-item row-groups-item">
-            <label class="col-md-1 control-label">产品名称</label>
-            <div class="col-md-3">
-                <span  name="productname">{{orderinfo.productName}}</span>
-            </div>
+                <div class="modal fade" tabindex="-1" role="dialog" id="Ctl_OrderInfo">
+                    <div class="modal-dialog  modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title" id="ordertitle">查看订单</h4>
+                            </div>
+                            <div class="modal-body" id="orderinfo_app" style="height:500px;overflow:auto">
+                                    <div class="box-header">
+                                        <h4>订单信息</h4>
+                                    </div>
 
-            <label class="col-md-1 control-label">订货单位</label>
-            <div class="col-md-3">
-              <span  name="receiver" >{{orderinfo.buyer}}</span></div>
-            
-            <label class="col-md-1 control-label">收货人</label>
-            <div class="col-md-3">
-            <span  name="receiver" >{{orderinfo.receiver}}</span></div>
-            
-        </div>
+                                    <table class="table table-bordered text-center">
+                                        <tr>
+                                            <td style="width:15%">产品名称</td>
+                                            <td style="width:20%">{{orderinfo.productName}}</td>
+                                            <td style="width:15%">订货单位</td>
+                                            <td style="width:20%">{{orderinfo.buyer}}</td>
+                                            <td style="width:15%">收货人</td>
+                                            <td style="width:auto">{{orderinfo.receiver}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>电话</td>
+                                            <td>{{orderinfo.phoneNo}}</td>
+                                            <td>交货时间</td>
+                                            <td>{{orderinfo.deliveryTime}}</td>
+                                            <td>商标要求</td>
+                                            <td>{{orderinfo.requiredBrand}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>单位</td>
+                                            <td>{{orderinfo.unit}}</td>
+                                            <td>订货数量</td>
+                                            <td>{{orderinfo.orderNum}}</td>
+                                            <td>品质要求</td>
+                                            <td>{{orderinfo.requiredQuality}}</td>
+                                        </tr>
+                                    </table>
 
-        <div class="col-md-12 row-groups-item">
-            <label class="col-md-1 control-label">电话</label>
-            <div class="col-md-3">
-              <span   name="phoneNo" >{{orderinfo.phoneNo}}</span></div>
-
-            <label class="col-md-1 control-label">交货时间</label>
-            <div class="col-md-3">
-                <span name="deliveryTime">{{orderinfo.deliveryTime}}</span></div>
-
-            <label class="col-md-1 control-label">商标要求</label>
-            <div class="col-md-3">
-              <span  name="requiredBrand" >{{orderinfo.requiredBrand}}</span></div>
-            
-            
-        </div>
-
-        <div class="col-md-12 row-groups-item">
-            <label class="col-md-1 control-label">单位</label>
-            <div class="col-md-3">
-            <span  name="unit" >{{orderinfo.unit}}</span></div>
-            
-            <label class="col-md-1 control-label">订货数量</label>
-            <div class="col-md-3">
-              <span  name="orderNum" >{{orderinfo.orderNum}}</span></div>
-            <label class="col-md-1 control-label">品质要求</label>
-            <div class="col-md-3">
-                <span name="requiredQuality">{{orderinfo.requiredQuality}}</span></div>
-        </div>
-        </div>
-        <div class="row">
-        <div class="box-header">
-            <h4>产品信息</h4>
-        </div>
-
-        <div class="col-md-12 row-groups-item">
-            <label class="col-md-1 control-label">产品代码</label>
-            <div class="col-md-3">
-                <span name="productCode">{{orderinfo.productCode}}</span></div>
-
-            <label class="col-md-1 control-label">胶料种类</label>
-            <div class="col-md-3">
-              <span  name="material" >{{orderinfo.material}}</span></div>
-            
-            <label class="col-md-1 control-label">线种类</label>
-            <div class="col-md-3">
-            <span  name="wireType" >{{orderinfo.wireType}}</span></div>
-        </div>
-
-        
-        <div class="col-md-12 row-groups-item">
-            <label class="col-md-1 control-label">线数(根)</label>
-            <div class="col-md-3">
-              <span  name="wireSize" >{{orderinfo.wireSize}}</span></div>
-            <label class="col-md-1 control-label">张力</label>
-            <div class="col-md-3">
-                <span name="tension">{{orderinfo.tension}}</span></div>
-
-            <label class="col-md-1 control-label">布种类</label>
-            <div class="col-md-3">
-              <span  name="clothType" >{{orderinfo.clothType}}</span></div>
-            
-            
-        </div>
-        
-        <div class="col-md-12 row-groups-item">
-            <label class="col-md-1 control-label">厚度</label>
-            <div class="col-md-3">
-            <span  name="thickness" >{{orderinfo.thickness}}</span></div>
-            
-            <label class="col-md-1 control-label">外周长</label>
-            <div class="col-md-3">
-              <span  name="outerPerimeter" >{{orderinfo.outerPerimeter}}</span></div>
-            <label class="col-md-1 control-label">附加尺寸</label>
-            <div class="col-md-3">
-                <span name="attachSize">{{orderinfo.attachSize}}</span></div>
-
-            
-        </div>
-        <div class="col-md-12 row-groups-item">
-            <label class="col-md-1 control-label">模具id</label>
-            <div class="col-md-3">
-              <span  name="moldId" >{{orderinfo.moldId}}</span></div>
-            
-            <label class="col-md-1 control-label">实际模具要求</label>
-            <div class="col-md-3">
-            <span  name="actualMoldRequired" >{{orderinfo.actualMoldRequired}}</span></div>
-            <label class="col-md-1 control-label">是否特殊产品</label>
-            <div class="col-md-3">
-            <span  name="unit" >{{orderinfo.isSpecial?'是':'否'}}</span></div>
-        </div>
-        </div>
-
-    </div><!-- /.modal-content -->
-<div class="modal-footer text-center">
-        <button type="button" class="btn btn-primary">打印</button>
-        <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
-    </div>
-  </div>
-    
-           <!-- /.modal-dialog -->
-</div><!-- /.modal -->
+                                    <div class="box-header">
+                                        <h4>产品信息</h4>
+                                    </div>
+                                    <div v-for="productInfo in orderinfo.productInfos">
+                                        <table class="table table-bordered text-center">
+                                            <tr>
+                                                <td style="width:15%">产品代码</td>
+                                                <td style="width:20%">{{productInfo.productCode}}</td>
+                                                <td style="width:15%">胶料种类</td>
+                                                <td style="width:20%">{{orderinfo.material}}</td>
+                                                <td style="width:15%">线种类</td>
+                                                <td style="width:auto">{{orderinfo.wireType}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>线数(根)</td>
+                                                <td>{{orderinfo.wireSize}}</td>
+                                                <td>张力</td>
+                                                <td>{{orderinfo.tension}}</td>
+                                                <td>布种类</td>
+                                                <td>{{orderinfo.clothType}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>厚度</td>
+                                                <td>{{orderinfo.thickness}}</td>
+                                                <td>外周长</td>
+                                                <td>{{orderinfo.outerPerimeter}}</td>
+                                                <td>附加尺寸</td>
+                                                <td>{{orderinfo.attachSize}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>模具id</td>
+                                                <td>{{orderinfo.moldId}}</td>
+                                                <td>实际模具要求</td>
+                                                <td>{{orderinfo.actualMoldRequired}}</td>
+                                                <td>是否特殊产品</td>
+                                                <td>{{orderinfo.isSpecial?'是':'否'}}</td>
+                                            </tr>
+                                        </table>
+                                </div>
+                            </div><!-- /.modal-content -->
+                            <div class="modal-footer text-center">
+                                <button type="button" class="btn btn-primary">打印</button>
+                                <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </div>
+                   <!-- /.modal-dialog -->
+                </div><!-- /.modal -->
         </section>
         <!-- /.content -->
     </div>
+    
     <!-- /.content-wrapper -->
     
     <!-- Main Footer -->
     <footer class="main-footer"></footer>
 
 </div>
-<!-- ./wrapper -->
 
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
 </body>
 </html>
+                    
